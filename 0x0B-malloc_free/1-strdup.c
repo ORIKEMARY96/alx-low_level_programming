@@ -9,17 +9,18 @@
 char *_strdup(char *str)
 {
 	char *strout;
-	unsigned int i, len;
+	unsigned int i, l;
 
 	i = 0;
 
-	len = 0;
+	l = 0;
+
 
 	if (str == NULL)
 		return (NULL);
 
-	while (str[len])
-		len++;
+	while (str[l] != '\0')
+		l++;
 
 	strout = (char *)malloc(sizeof(char) * (i + 1));
 
@@ -29,7 +30,6 @@ char *_strdup(char *str)
 	while ((strout[i] = str[i]) != '\0')
 		i++;
 
-	free(strout);
 
 	return (strout);
 }
