@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
         
         if (s2 == NULL)
 	{
-	for (j = 0; j < len1 + len2; j++)
+	for (j = 0; j < len1 + len2 + 1; j++)
 	{
 	  strout[j] = s2[j];
 	}
