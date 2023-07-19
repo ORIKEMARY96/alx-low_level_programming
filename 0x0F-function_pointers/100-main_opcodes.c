@@ -10,11 +10,13 @@
  */
 void print_opcodes(char *a, int n)
 {
+	if (a == NULL)
+		return;
 int i;
 
 for (i = 0; i < n; i++)
 {
-printf("%.2hx", a[i]);
+printf("%x", a[i]);
 if (i < n - 1)
 printf(" ");
 }
@@ -33,6 +35,9 @@ int main(int argc, char *argv[])
 {
 	int bytes, i;
 	char *arr;
+
+	if (arr == NULL)
+		return;
 
 	if (argc != 2)
 	{
@@ -54,10 +59,10 @@ int main(int argc, char *argv[])
 	{
 		if (i == bytes - 1)
 		{
-			printf("%02hx\n", arr[i]);
+			printf("%x\n", arr[i]);
 			break;
 		}
-		printf("%02hx ", arr[i]);
+		printf("%x ", arr[i]);
 	}
 	return (0);
 }
