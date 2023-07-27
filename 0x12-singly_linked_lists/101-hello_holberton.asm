@@ -1,20 +1,12 @@
-assembly
-section .data
+       global  main
+       extern  printf
 
-hello db 'Hello, Holberton,', 10;
+main:
 
-section .text
-global _start
+       mov  edi, format
+       xor  eax, eax
+       call printf
+       mov  eax, 0
+       ret
 
-_start:
-; write syscall
-mov eax, 1
-mov edi, 1
-mov esi, hello
-mov edx, 17
-syscall
-
-; exit syscall
-mov eax, 60
-xor edi, edi
-syscall
+    format:  db 'Hello, Holberton\n',0
