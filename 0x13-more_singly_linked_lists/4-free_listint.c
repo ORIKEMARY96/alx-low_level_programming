@@ -5,7 +5,7 @@
  *  @head: list to be freed
  *  Return: Nothing.
  */
-void ferr_listint_t(listint_t *head)
+void free_listint_t(listint_t *head)
 {
 	listint_t *tmp;
 
