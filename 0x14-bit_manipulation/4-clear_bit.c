@@ -9,16 +9,13 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long hold;
-
-	unsigned long int j;
+	unsigned long int mask;
 
 	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
+	mask = ~(1UL << index);
 
-	for (j = 1; hold > 0; j *= 2)
-		hold--;
-	if ((*n >> index) & 1)
-		*n -= j;
+	*n = *n & mask;
+
 	return (1);
 }
