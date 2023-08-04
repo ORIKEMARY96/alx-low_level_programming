@@ -18,10 +18,12 @@ unsigned int binary_to_unit(const char *b)
 
 	while (b[i] != '\0')
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[i] < '0' || b[i] > '1')
+
 			return (0);
 
-		total = total * 2 + (b[i] - '0');
+		total = 2 * total + (b[i] - '0');
+
 
 		i++;
 	}
